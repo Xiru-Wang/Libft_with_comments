@@ -13,24 +13,24 @@ void *ft_bzero(void *s, size_t n)
     return (ret);
 }
 
-int main(void)
-{
-    char str1[100] = "Hello, world!";
-    char str2[100] = "Hello, world!";
+// int main(void)
+// {
+//     char str1[100] = "Hello, world!";
+//     char str2[100] = "Hello, world!";
 
-    // Use memset to initialize str1
-    memset(str1, 0, sizeof(str1));
-    // Use ft_bzero to initialize str2
-    ft_bzero(str2, sizeof(str2));
+//     // Use memset to initialize str1
+//     memset(str1, 0, sizeof(str1));
+//     // Use ft_bzero to initialize str2
+//     ft_bzero(str2, sizeof(str2));
 
-    // Compare the results
-    if (memcmp(str1, str2, sizeof(str1)) == 0)
-        printf("ft_bzero works correctly.\n");
-    else
-        printf("ft_bzero does not work correctly.\n");
+//     // Compare the results
+//     if (memcmp(str1, str2, sizeof(str1)) == 0)
+//         printf("ft_bzero works correctly.\n");
+//     else
+//         printf("ft_bzero does not work correctly.\n");
 
-    return 0;
-}
+//     return 0;
+// }
 
 // 当我们在处理二进制数据时，使用unsigned char类型的指针更为合适。
 // 由于它们不具有符号位，因此可以避免在进行位运算或进行其他操作时出现意外的错误。

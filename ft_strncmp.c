@@ -6,7 +6,7 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:44:35 by xiruwang          #+#    #+#             */
-/*   Updated: 2023/05/04 18:59:57 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/08 08:13:18 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (*s1 && (*s1 == *s2) && --n)
 	{
-		printf("n = %zu\n", n);
+		// printf("n = %zu\n", n);
 		s1++;
 		s2++;
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
 
-int main()
-{
-	size_t n = 1;
-	char str1[] = "Hello, world!";
-	char str2[] = "HEllo, w";
+// int main()
+// {
+// 	size_t n = 1;
+// 	char str1[] = "Hello, world!";
+// 	char str2[] = "HEllo, w";
 
-	printf("Mine:%d, Lib's:%d\n", ft_strncmp(str1, str2, n), strncmp(str1, str2, n));
-	return 0;
-}
+// 	printf("Mine:%d, Lib's:%d\n", ft_strncmp(str1, str2, n), strncmp(str1, str2, n));
+// 	return 0;
+// }

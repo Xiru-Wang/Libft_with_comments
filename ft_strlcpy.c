@@ -2,33 +2,42 @@
 #include <stdio.h>
 
 /*
-1. 将源字符串中n个字符拷贝到目标字符串中
-2. strlcpy返回值是源字符串的长度
-
-与strcpy不同，strlcpy函数会在拷贝src后自动在dst末尾添加一个 null（'\0'），
-保证dst是一个合法的 C 字符串，可以安全地用于后续的操作。
-
-与 strncpy 函数不同，strlcpy 函数不会在dest末尾添加多余的 null 字符，
-因此可以确保dest始终有一个合法的 null 终止符，并且不会超过指定的长度。
-这使得 strlcpy 函数在处理字符串时更加安全可靠。
-
-这个返回值的作用是告诉调用函数，源字符串实际上有多长，
-以便在分配目标缓冲区时使用正确的长度。此外，该返回值还可用于确定是否发生了缓冲区截断。
-如果返回值与目标缓冲区的大小相同，那么源字符串被完全复制到了目标缓冲区??
-否则目标缓冲区截断了源字符串。
+该函数将src字符串的内容拷贝到dst缓冲区中，最多拷贝dstsize-1个字符，
+同时保证目标字符串以NULL字符结尾。如果src字符串的长度大于等于dstsize，
+则目标字符串不会被完全复制，但仍会以NULL字符结尾。
+strlen(src)<= dsize -1时候就完全复制了
 */
 size_t ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
     size_t i;
 
     i = 0;
-    while (--dstsize && src[i]) // while (i < (dstsize - 1) && src[i])
+
+    while (i + 1 < dstsize && src[i])
     {
         dst[i] = src[i];
         i++;
     }
-    dst[i] = '\0';
-    while (src[i]) // 需要增加另一个while循环来计算源字符串的长度,从而避免了遗漏未复制的字符
+    if (i < dstsize) // NUL-terminating the result if dstsize is not 0
+        dst[i] = 0;
+    while (src[i]) // 避免遗漏未复制的字符
         i++;
     return (i);
 }
+
+// int main()
+// {
+//     char dst[11] = "abcdefghkl";
+//     char src[] = "123456789a";
+
+//     char dst1[11] = "abcdefghkl";
+//     char src1[] = "123456789a";
+//     size_t n = sizeof(dst);
+//     printf("Lib's:%lu\n", strlcpy(dst, src, 1));
+//     printf("Lib's:%s\n", dst);
+//     printf("Mine:%lu\n", ft_strlcpy(dst1, src1, 1));
+//     printf("Mine:%s\n", dst1);
+//     printf("if Strlen(src):%lu <= sizeof(dst):(%lu - 1),那src被完全复制了,否则发生了截断\n", strlen(src), n);
+
+//     return 0;
+// }

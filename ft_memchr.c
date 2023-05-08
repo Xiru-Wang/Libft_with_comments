@@ -17,15 +17,15 @@ void *ft_memchr(const void *s, int c, size_t n)
     return (NULL);
 }
 
-int main()
-{
-    char str[] = "Hello, world,";
-    int c = '?';
-    size_t n = 0;
+// int main()
+// {
+//     char str[] = "Hello, world,";
+//     int c = '?';
+//     size_t n = 0;
 
-    char *p1 = memchr(str, c, n);
-    char *p2 = ft_memchr(str, c, n);
-    printf("Lib's:%s\n", p1);
-    printf("Mine's:%s\n", p2);
-    return 0;
-}
+//     char *p1 = memchr(str, c, n);
+//     char *p2 = ft_memchr(str, c, n);
+//     printf("Lib's:%s\n", p1);
+//     printf("Mine's:%s\n", p2);
+//     return 0;
+// }

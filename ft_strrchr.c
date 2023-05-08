@@ -17,12 +17,12 @@ char *ft_strrchr(const char *s, int c)
     return (NULL);
 }
 
-int main()
-{
-    char str[] = "Hello";
-    int c = '.';
+// int main()
+// {
+//     char str[] = "Hello";
+//     int c = '.';
 
-    printf("Lib's: %s\n", strrchr(str, c));
-    printf("Mine's: %s\n", ft_strrchr(str, c));
-    return 0;
-}
+//     printf("Lib's: %s\n", strrchr(str, c));
+//     printf("Mine's: %s\n", ft_strrchr(str, c));
+//     return 0;
+// }

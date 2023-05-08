@@ -27,11 +27,11 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     return (*p1 - *p2);
 }
 
-int main()
-{
-    char str1[] = "Hello, world!";
-    char str2[] = "HEllo, world!";
+// int main()
+// {
+//     char str1[] = "Hello, world!";
+//     char str2[] = "HEllo, world!";
 
-    printf("Mine:%d, Lib's:%d\n", ft_memcmp(str1, str2, 1), memcmp(str1, str2, 1));
-    return 0;
-}
+//     printf("Mine:%d, Lib's:%d\n", ft_memcmp(str1, str2, 1), memcmp(str1, str2, 1));
+//     return 0;
+// }
