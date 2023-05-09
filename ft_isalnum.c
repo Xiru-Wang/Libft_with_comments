@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 18:13:49 by xiruwang          #+#    #+#             */
-/*   Updated: 2023/05/09 18:54:32 by xiwang           ###   ########.fr       */
+/*   Created: 2023/05/02 12:02:56 by xiwang            #+#    #+#             */
+/*   Updated: 2023/05/09 19:26:21 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((char *)s);
-	return (NULL);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	else
+		return (0);
 }
-
-/*int main()
-{
-	char str[] = "Hello, world,";
-	int c = ',';
-
-	printf("Lib's:%s\n", strchr(str, c));
-	printf("Mine's:%s\n", ft_strchr(str, c));
-	return 0;
-}*/

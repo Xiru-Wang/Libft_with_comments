@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 18:13:49 by xiruwang          #+#    #+#             */
-/*   Updated: 2023/05/09 18:54:32 by xiwang           ###   ########.fr       */
+/*   Created: 2023/05/02 11:58:12 by xiwang            #+#    #+#             */
+/*   Updated: 2023/05/09 19:25:20 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_isdigit(int c)
 {
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((char *)s);
-	return (NULL);
+	return (c >= '0' && c <= '9');
 }
-
-/*int main()
-{
-	char str[] = "Hello, world,";
-	int c = ',';
-
-	printf("Lib's:%s\n", strchr(str, c));
-	printf("Mine's:%s\n", ft_strchr(str, c));
-	return 0;
-}*/
