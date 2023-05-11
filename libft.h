@@ -6,7 +6,7 @@
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:05:24 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/10 20:40:03 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/11 16:00:55 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 //void (*del)(void *);
 
 #endif
