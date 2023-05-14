@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 20:29:35 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/10 20:53:20 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/14 10:46:54 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new = malloc(sizeof(char) * len);
 	if (!new || !s1 || !s2)
 		return (NULL);
-	//if (*s1) wrong
-	ft_strlcpy(new, s1, len);//not ft_len(s1)+1
-	//if (*s2) wrong
-	ft_strlcat(new, s2, len);////not ft_len(s1)+1
+	ft_strlcpy(new, s1, len);
+	ft_strlcat(new, s2, len);
 	return (new);
 }

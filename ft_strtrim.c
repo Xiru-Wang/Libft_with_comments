@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:01:23 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/11 19:00:24 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/14 19:18:51 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "libft.h"
 
 size_t	ft_char_in_set(char c, char const *set)
 {
@@ -34,14 +34,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 
 	start = 0;
-	end = strlen(s1);
-	//if (!s1 || !set)
-	//	return (0);
-	while (s1[start] && ft_char_in_set(s1[start], set))//check if start from 1st index
-		start++;//if yes, ++ to find where to start to trim
-	while (start < end && ft_char_in_set(s1[end - 1], set))// check from last index
+	end = ft_strlen(s1);
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[start] && ft_char_in_set(s1[start], set))
+		start++;
+	while (start < end && ft_char_in_set(s1[end - 1], set))
 		end--;
-	ret = (char *)malloc(sizeof(char)*(end - start + 1));
+	ret = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (ret == NULL)
 		return (NULL);
 	i = 0;
@@ -54,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*int	main(void)
 {
 	char	str1[] = "abcdefgcc";
-	char	str2[] = "ace";
+	char	str2[] = "acbe";
 	//char	str3[] = "ac";
 	char	*trimmed;
 	// char	str4[] = "de";

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:52:23 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/09 18:52:23 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/14 18:28:13 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
+	if (!d && !s)
+		return (NULL);
 	while (n--)
 		*d++ = *s++;
 	return (dst);
@@ -35,7 +37,9 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	printf("After memcpy dest = %s\n", (char *)memcpy(dest, src, 5));
 
 	return (0);
-}*/
+}
+//if (!d || !s) WRONG
+*/
 
 /*int main()
 {

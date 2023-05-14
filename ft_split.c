@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:38:58 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/12 20:58:23 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/14 19:07:03 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-1. count how many words(how many lines)
-2. malloc and put chars in each line with a NULL
-3. The array must end with a NULL pointer
-*/
-
 size_t	count_words(char const *s, char c)
 {
 	size_t	count;
 
 	count = 0;
-	while(*s)
+	while (*s)
 	{
-		while (*s == c)//skip c
+		while (*s == c)
 			s++;
 		if (*s)
 		{
-			count++;//1 loop, 1 word count
-			while (*s && *s != c)//skip the rest
+			count++;
+			while (*s && *s != c)
 				s++;
 		}
 	}
@@ -62,45 +56,47 @@ char	*put_word(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**words;//return 2d array
+	char	**words;
 	size_t	i;
 
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	words = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1)); //allocate arrays
-	if (words == NULL)//check if allocate success
+	words = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (words == NULL)
 		return (NULL);
 	while (*s)
 	{
-		while (*s == c)//skip the delimiter c
+		while (*s == c)
 			s++;
 		if (*s)
 		{
-			words[i] = put_word(s,c);
+			words[i] = put_word(s, c);
 			i++;
-			while(*s && *s != c)
+			while (*s && *s != c)
 				s++;
 		}
 	}
-	words[i] = 0;//The array must end with a NULL pointer
+	words[i] = 0;
 	return (words);
 }
 
-// int main()
-// {
-// 	char input[] = " a bb";
-// 	char **result = ft_split(input, ' ');
-// 	int i;
+/*int main()
+{
+	char input[] = " a bb";
+	char **result = ft_split(input, ' ');
+	int i;
 
-// 	// Accessing individual strings in the array
-// 	i = 0;
-// 	while (result[i])
-// 	{
-// 		printf("%s\n", result[i]);
-// 		free(result[i]);
-// 		i++;
-// 	}
-// 	free(result);
-// 	return 0;
-// }
+	// Accessing individual strings in the array
+	i = 0;
+	while (result[i])
+	{
+		printf("%s\n", result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return 0;
+}
+The array must end with a NULL pointer
+*/
