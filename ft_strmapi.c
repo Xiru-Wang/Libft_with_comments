@@ -6,13 +6,13 @@
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 19:09:33 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/15 19:40:13 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/15 20:02:43 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+/*size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -20,9 +20,9 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
-}
+}*/
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*ret;
 	unsigned int	i;
@@ -44,19 +44,21 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (ret);
 }
 
-int	ft_toupper(int c)
+/*char	odd_upper(unsigned int i, char c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	if (!(i % 2))
+	{
+		if (c >= 'a' && c <= 'z')
+			return (c - 32);
+	}
+	return (c);
 }
 
 int main()
 {
-    char *s = "hello";
-    char *mapped = ft_strmapi(s, ft_toupper);
+    char *s = "hello worldddd";
+    char *mapped = ft_strmapi(s, odd_upper);
     printf("%s\n", mapped);
     free(mapped);
 	return 0;
-}
+}*/
