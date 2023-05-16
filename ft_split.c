@@ -6,7 +6,7 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:38:58 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 19:07:03 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/16 20:49:39 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,20 @@ char	*put_word(char const *s, char c)
 	return (word);
 }
 
+char	**handle_malloc_err(char **words)
+{
+	int	i;
+
+	i = 0;
+	while (words[i])
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
@@ -72,6 +86,8 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			words[i] = put_word(s, c);
+			if (words[i] == NULL)
+				return (handle_malloc_err(words));
 			i++;
 			while (*s && *s != c)
 				s++;
@@ -81,10 +97,12 @@ char	**ft_split(char const *s, char c)
 	return (words);
 }
 
-/*int main()
+/*
+int main()
 {
 	char input[] = " a bb";
-	char **result = ft_split(input, ' ');
+	//char **result = ft_split(input, ' ');
+	char **result = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
 	int i;
 
 	// Accessing individual strings in the array
@@ -98,5 +116,5 @@ char	**ft_split(char const *s, char c)
 	free(result);
 	return 0;
 }
-The array must end with a NULL pointer
+//The array must end with a NULL pointer
 */

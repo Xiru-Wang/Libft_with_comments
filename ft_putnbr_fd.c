@@ -11,11 +11,11 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		write(fd, "-", 1);
 		if (n == -2147483648)
 		{
-			ft_putnbr_fd(214748364, fd);
-			ft_putchar_fd('8', fd);
+			write(fd, "214748364", 9);
+			write(fd, "8", 1);
 		}
 		n = -n;
 	}
