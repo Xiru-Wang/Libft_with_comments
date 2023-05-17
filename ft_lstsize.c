@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:09:19 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/17 16:09:22 by xiwang           ###   ########.fr       */
+/*   Created: 2023/05/17 18:21:49 by xiwang            #+#    #+#             */
+/*   Updated: 2023/05/17 19:05:23 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_lstsize(t_list *lst)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (s[i])
+	while(lst)
 	{
-		write(fd, &s[i], 1);
+		lst = lst -> next;//move to the next node
 		i++;
 	}
+	return (i);
 }
-
-// int	main(void)
-// {
-// 	ft_putstr_fd("file descriptor?", 0);
-
-// 	return 0;
-// }

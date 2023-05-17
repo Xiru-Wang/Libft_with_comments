@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:09:19 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/17 16:09:22 by xiwang           ###   ########.fr       */
+/*   Created: 2023/05/17 16:39:27 by xiwang            #+#    #+#             */
+/*   Updated: 2023/05/17 19:27:06 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
+	if (lst)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		if (*lst)
+			new -> content = *lst;
+		*lst = new;
 	}
 }
-
-// int	main(void)
-// {
-// 	ft_putstr_fd("file descriptor?", 0);
-
-// 	return 0;
-// }

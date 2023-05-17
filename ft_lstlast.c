@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 16:09:01 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/17 16:09:03 by xiwang           ###   ########.fr       */
+/*   Created: 2023/05/17 18:22:32 by xiwang            #+#    #+#             */
+/*   Updated: 2023/05/17 19:26:43 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list *ft_lstlast(t_list *lst)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	while(lst)
+	{
+		if(lst -> next == NULL)// reach the last node
+			return	(lst);
+		lst = lst -> next;
+	}
+	return	(lst);// if list is empty, return null
 }
 
-/*
-int	main(void)
-{
-	ft_putendl_fd("file descriptor?", 0);
-
-	return 0;
-}
-
-//ssize_t write(int __fd, const void *__buf, size_t __nbyte)
-*/
+/*the function will traverse the list until it finds a node
+where next is NULL. That's the last node in the list,
+and the function returns that node. If the list is empty
+(i.e., lst is NULL to begin with), the function will return NULL.*/
