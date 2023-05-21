@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:10:34 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/21 13:16:41 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:06:43 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 
-int main(void)
+/*int main(void)
 {
 	char *str = "Hello, world!";
 	t_list *node = ft_lstnew(str);
@@ -49,8 +49,4 @@ int main(void)
 	free(node);
 	return 0;
 }
-
-/*
--> [member access operator/arrow]
-access the fields of the object pointed to by the pointer.
 */

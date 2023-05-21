@@ -6,14 +6,12 @@
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:04:56 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/15 20:05:00 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:30:36 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
 #include "libft.h"
+#include <stdint.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {

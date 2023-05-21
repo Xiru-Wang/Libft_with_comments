@@ -3,20 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 18:22:32 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/19 18:39:47 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/21 18:24:32 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)//empty list， lst 是指向链表的头节点的指针
+	if (lst == NULL)
 		return (NULL);
 	while (lst -> next != NULL)
-		lst = lst->next;//lst 被用来遍历链表。每次迭代，lst 都会被设置为它当前所指向的节点的 next 节点，即链表中的下一个节点。这个循环将持续进行，直到 lst 指向的节点没有 next 节点，即 lst 指向链表的最后一个节点。
+		lst = lst->next;
 	return (lst);
 }
+
+/*int	main()
+{
+	t_list *head = NULL;
+	t_list *temp, *node;
+	t_list *node1 = malloc(sizeof(t_list));//RETURN SIZE OF THE STRUCT
+	t_list *node2 = malloc(sizeof(t_list));
+	t_list *node3 = malloc(sizeof(t_list));
+
+	if (!node1 || !node2 ||!node3)
+		return 1;
+	node1 -> content = "hello";
+	node2 -> content = "cat";
+	node3 -> content = "and dog?";
+	//string literal will be automatically deallocated when the program terminates.
+
+	head = node1;
+	node1 -> next = node2;
+	node2 -> next = node3;
+	node3 -> next = NULL;
+
+
+	printf("%s\n", (char *)ft_lstlast(head)->content);//remember type cast && access to its content
+
+	node = head;
+	temp = head;
+	while (node)
+	{
+		// printf("%s\n", (char *)node->content);
+		temp = node;
+		node = node->next;
+		free(temp);
+	}
+	return 0;
+}
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 18:21:49 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/19 15:50:39 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:13:43 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)//The beginning of the list.
 	unsigned int	i;
 
 	i = 0;
-	while(lst -> next != NULL)//traverse using head pointer
+	while(lst)
 	{
 		lst = lst -> next;//move to the next node
 		i++;
