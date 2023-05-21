@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 18:22:32 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/17 19:26:43 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/19 18:39:47 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-	while(lst)
-	{
-		if(lst -> next == NULL)// reach the last node
-			return	(lst);
-		lst = lst -> next;
-	}
-	return	(lst);// if list is empty, return null
+	if (lst == NULL)//empty list， lst 是指向链表的头节点的指针
+		return (NULL);
+	while (lst -> next != NULL)
+		lst = lst->next;//lst 被用来遍历链表。每次迭代，lst 都会被设置为它当前所指向的节点的 next 节点，即链表中的下一个节点。这个循环将持续进行，直到 lst 指向的节点没有 next 节点，即 lst 指向链表的最后一个节点。
+	return (lst);
 }
-
-/*the function will traverse the list until it finds a node
-where next is NULL. That's the last node in the list,
-and the function returns that node. If the list is empty
-(i.e., lst is NULL to begin with), the function will return NULL.*/

@@ -3,24 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:10:34 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/17 19:27:17 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/21 13:16:41 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
-{
-	t_list *new_node;
+/*
+Allocates (with malloc(3)) and returns a new node.
+The member variable ’content’ is initialized with
+the value of the parameter ’content’. The variable
+’next’ is initialized to NULL.
+*/
 
-	new_node = (t_list *)malloc(sizeof(*new_node));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->content = content; //(*new_node).content
-	new_node->next = NULL;		 //(*new_node).next
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(*new_node));// a pointer to store memorry address
+	if (new_node == NULL)//if malloc failed
+		return (NULL);//return a NULL pointer
+	new_node->content = content; //==(*new_node).content， assign content to data field of the node
+	new_node->next = NULL;		 //(*new_node).next, initialize pointer field of the node to NULL
 	return (new_node);
 }
 
@@ -32,7 +39,7 @@ int main(void)
 	if (node != NULL)
 	{
 		printf("Content: %s\n", (char *)node->content);
-		printf("Next: %p\n", (void *)node->next);
+		printf("Next: %p\n", node->next);
 	}
 	else
 	{
@@ -44,6 +51,6 @@ int main(void)
 }
 
 /*
--> [member access operator]
-operator is used to access the members of the object pointed to by the pointer.
+-> [member access operator/arrow]
+access the fields of the object pointed to by the pointer.
 */
