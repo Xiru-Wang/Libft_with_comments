@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:52:43 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/09 19:01:28 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 11:32:02 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
+#include "libft.h"
+
+/*locates the first occurrence of c (converted to an unsigned char)
+ in string s.
+it returns a pointer to the byte located, or NULL if no such byte exists
+within n bytes.
+unsigned char: 8 bits, char: 1 sign bit + 7 bits
+eg. -1 will become 255, instead of 128
+*/
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

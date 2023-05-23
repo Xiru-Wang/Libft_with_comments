@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:40:57 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/09 18:47:06 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 11:48:00 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+#include "libft.h"
+
+/*compare two memory block
+1. The memcmp() function compares byte string s1 against byte string s2.
+Both strings are assumed to be n bytes long.
+2. Returns the difference between the first two differing bytes
+3. Comparing exactly n bytes, regardless of their content.
+*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -23,11 +30,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n == 0)
 		return (0);
 	while (*p1 == *p2 && --n)
+	//NOT n--, otherwise when n=1, p moves to s[1] instead of compare s[0]
 	{
 		p1++;
 		p2++;
 	}
-	return (*p1 - *p2);
+	return (*p1 - *p2);// first pair of non-matching bytes
 }
 
 /*
@@ -41,11 +49,8 @@ int main()
     return 0;
 }
 */
-/*在使用ft_memcmp函数比较两个内存块时，
-循环判断的条件是*p1 == *p2 && --n，
-其中的--n保证了循环次数不会超过指定的长度n，
-因此不用额外检查*p1和*p2是否为\0，因为n已经限定了循环的次数，
-循环过程中一旦遇到\0就会立即停止循环。需要注意的是，当n为0时，ft_memcmp应该返回0。
 
+/*
+comparing exactly n bytes, regardless of their content.
 memcmp 可以用来比较任意两个内存区域的值，而不仅限于字符串，而 strcmp 只能比较字符串。
 */

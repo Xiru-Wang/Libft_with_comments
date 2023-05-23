@@ -6,12 +6,11 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:57:04 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 19:26:42 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:02:31 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

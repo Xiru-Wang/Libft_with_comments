@@ -6,12 +6,12 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:53:26 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 19:33:17 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:29:13 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len > 0)
 		{
-			d[len - 1] = s[len - 1];
+			d[len - 1] = s[len - 1];//copy from behind to avoid data loss(if there's overlap)
 			len--;
 		}
 	}

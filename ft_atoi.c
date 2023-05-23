@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:05:12 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/15 20:05:16 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/22 22:18:38 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+
+/*
+NOTE: 'Normal' atoi NOT 42 ATOI. eg. ft_atoi("-+42") == 0
+normal atoi cannot handle more than one '-'/'+' sign before the numbers
+converts char number (a string) to int
+*/
 
 int	ft_atoi(const char *str)
 {
@@ -37,18 +42,12 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-/* int main(void)
+int main(void)
 {
-    char str[] = "-+ 42";
-    printf("%d\n", ft_atoi(str));
-    printf("%d\n", atoi(str));
+    char str[] = "+-42";
+    printf("%d\n", ft_atoi(str));//0
+    printf("%d\n", atoi(str));//0
 
     return 0;
 }
-*/
-/*
-Normal atoi NOT 42 ATOI
-把字母数字转换成整数
-The atoi() function converts the initial portion of the string pointed to
-     by str to int representation.
-*/
+

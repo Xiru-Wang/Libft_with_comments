@@ -3,37 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:23:39 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/21 18:23:43 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 11:06:44 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 /*
-Takes as a parameter a node and frees the memory of
-the node’s content using the function ’del’ given
-as a parameter and free the node. The memory of
-’next’ must not be freed.
+this function:
+1. free the memory of the node’s content using the function ’del’
+2. free the node.
+Attention: The memory of ’next’ must not be freed.
+
+Learn more <Single Linked List (Deleting the Node at a Particular Position)>
+https://www.youtube.com/watch?v=f1r_jxCyOl0
 */
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst == NULL) // no node be be deleted
+	if (lst == NULL) // no node to be deleted
 		return;
-	del(lst->content);
-	free(lst);
+	del(lst->content);//free its content by using del() function
+	free(lst);//free the node
 }
 
-/*void del(void *content)
+/*void	free_content(void *content)
 {
 	free(content);
 }
 
-int main()
+int	main()
 {
 
 	t_list *node = malloc(sizeof(t_list));
@@ -47,7 +49,7 @@ int main()
 	// string literals are typically stored in read-only memory.The free can only free dynamic memorry
 
 	// Call ft_lstdelone to delete the node and its content
-	ft_lstdelone(node, del);
+	ft_lstdelone(node, free_content);
 	printf("Node and content freed successfully!\n");
 	return 0;
 }*/

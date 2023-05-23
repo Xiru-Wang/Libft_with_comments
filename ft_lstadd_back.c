@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:24:00 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/21 18:24:03 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 10:53:47 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+1. find the last node
+2. let pointer field of that node point to new
+Learn more:
+https://www.youtube.com/watch?v=90zyJ1eVeUw*/
 
-void ft_lstadd_back(t_list **lst, t_list *new)//**lst: a pointer to head pointer of lst
+void	ft_lstadd_back(t_list **lst, t_list *new)//**lst: a pointer to head pointer, bc we want to update head pointer
+//**lst is local to this function, *lst will reflect on the int main function
 {
-	t_list *temp;//to go thru the link without losing head
+	t_list	*temp;//to go thru the link without losing head
 
 	if (lst == NULL || new == NULL)//understand it as Null list||Null node
 		return;//do nothing
@@ -24,8 +30,8 @@ void ft_lstadd_back(t_list **lst, t_list *new)//**lst: a pointer to head pointer
 	{
 		temp = *lst;
 		while (temp->next != NULL)//After each iteration, temp is updated to point to the next node.
-			temp = temp -> next;//arrived the last node, When the loop ends, temp points to the last node in the list.
-		temp -> next = new;// makes the next field of the last node (temp) point to the new node
+			temp = temp -> next;//When the loop ends, temp points to the last node in the list.
+		temp -> next = new;// makes the pointer field of the last node (temp) point to the new node
 	}
 }
 

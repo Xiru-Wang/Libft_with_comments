@@ -3,21 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:04:56 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/21 18:30:36 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/22 22:52:06 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
+#include <stdint.h>//for SIZE_MAX
+
+/*
+malloc then filled with zeros.
+*/
+void	*ft_bzero(void *s, size_t n)
+{
+	void	*ret;
+
+	ret = s;
+	if (n == 0)
+		return (ret);
+	while (n--)
+		*(unsigned char *)s++ = 0;
+	return (ret);//return pair with void *func
+}
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ret;
 
-	if (count != 0 && SIZE_MAX / count < size)
+	if (count != 0 && SIZE_MAX / count < size)//maximum value for size_t(2^64 - 1)
 		return (NULL);
 	ret = malloc(count * size);
 	if (ret == NULL)
@@ -26,8 +41,9 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ret);
 }
 
-/*int main(void)
+int main(void)
 {
+	printf("%zu\n", SIZE_MAX);//to check the number in this system
     size_t size = 10;
     int *arr = (int *)ft_calloc(size, sizeof(int));
 
@@ -35,4 +51,4 @@ void	*ft_calloc(size_t count, size_t size)
         printf("%d ", arr[i]);
     free(arr);
     return 0;
-}*/
+}

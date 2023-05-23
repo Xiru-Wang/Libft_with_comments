@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:39:27 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/21 16:02:01 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 10:57:06 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-lst: The address of head pointer.
-new: The address of a pointer to the node to be
-added to the list.//pointer to the new node
+Note:
+we can access the list only thru the head pointer
 */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst == NULL || new == NULL)
 		return;
-	new->next = *lst;//point to what head pointes to
-	*lst = new;//let head point to new(break the link between head & previous first node)
+	new->next = *lst;//point to what head points to
+	*lst = new;//let head points to new
 }
 
 /*t_list	*ft_lstnew(void *content)

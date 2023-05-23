@@ -3,29 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:47:28 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/09 18:59:25 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/22 22:31:48 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <strings.h>
-#include <stdio.h>
+#include "libft.h"
 
+/*
+1. Writes n zeroed bytes to the string s.
+2. If n is zero, bzero() does nothing.
+Notes: void pointer cannot be dereferenced.
+
+why cast to char: to operate on a byte-by-byte basis.
+To ensures the pointer points to a single byte of memory
+(since char is guaranteed to be 1 byte in C).
+
+
+*/
 void	*ft_bzero(void *s, size_t n)
 {
 	void	*ret;
 
-	ret = s;
+	ret = s;//to remember the start of the memory block
 	if (n == 0)
 		return (ret);
 	while (n--)
-		*(unsigned char *)s++ = 0;
+		*(unsigned char *)s++ = 0;//cast to char*, then dereference to get the value
 	return (ret);
 }
 
-/*int main(void)
+int main(void)
 {
 	char str1[100] = "Hello, world!";
 	char str2[100] = "Hello, world!";
@@ -43,9 +54,3 @@ void	*ft_bzero(void *s, size_t n)
 
 	return 0;
 }
-
-当我们在处理二进制数据时，使用unsigned char类型的指针更为合适。
-由于它们不具有符号位，因此可以避免在进行位运算或进行其他操作时出现意外的错误。
-此外，在使用malloc等动态内存分配函数分配内存时，
-分配的是未初始化的内存，因此使用unsigned char类型的指针进行初始化会更为安全和可靠。
-*/

@@ -6,12 +6,11 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:38:58 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/16 20:49:39 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:03:37 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	count_words(char const *s, char c)
 {

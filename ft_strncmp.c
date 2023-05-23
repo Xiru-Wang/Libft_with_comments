@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:44:35 by xiruwang          #+#    #+#             */
-/*   Updated: 2023/05/09 19:02:17 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/22 22:02:40 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

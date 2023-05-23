@@ -6,11 +6,10 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 20:29:35 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 10:46:54 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:03:14 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

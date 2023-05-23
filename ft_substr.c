@@ -6,11 +6,10 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:40:32 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 19:41:38 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:02:09 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> //for malloc
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)

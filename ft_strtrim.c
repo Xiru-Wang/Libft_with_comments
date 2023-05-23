@@ -6,12 +6,10 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:01:23 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/14 19:18:51 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:02:21 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include "libft.h"
 
