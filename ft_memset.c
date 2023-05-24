@@ -6,7 +6,7 @@
 /*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:05:58 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/15 20:06:01 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/23 18:03:01 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (ret);
 }
-/*(unsigned char *)b 是将指针 b 指向的地址强制转换为 unsigned char 类型
-并取出该地址上的值。这个操作先将指针 b 强制转换为 unsigned char 指针，然后再用 * 取值。
-void类型的指针，不能进行算术运算和解引用操作
+/*(unsigned char *)s: cast then dereference to get its value
 */

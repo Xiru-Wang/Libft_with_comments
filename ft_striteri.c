@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:09:19 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/16 15:45:11 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:01:19 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 apply a function to each character of a string
 ft_striteri doesn't return anything and works directly on the original string.
 
-return statement in void serves to exit the function
-and return to the location where the function was called.
+return statement in void serves to exit the function and return to the location where the function was called(eg. int main).
 */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -24,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (s == NULL || f == NULL)
-		return ;
+		return;
 	while (s[i])
 	{
 		f(i, &s[i]);

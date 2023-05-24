@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:52:23 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/23 12:34:51 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:59:39 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,20 @@
 
 /*
 1. we can NOT dereference a void pointer
-2. Posibble mistake: *dst++ / *src++ will lost the start of block of mem
-在进行 *dst++ 或 *src++ 这样的操作时，我们将改变 dst 和 src 的值，使其在函数返回时指向内存块的尾部，而不是头部，
+2. Posibble mistake: *dst++ /
 */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
-	unsigned char	*s;
+	//unsigned char	*s;
 
-	d = (unsigned char *)dst;//创建辅助指针来改变内存位置
-	s = (unsigned char *)src;
-	if (!d && !s)// (!d || !s) won't pass the test, still dont understand WHY..
+	d = (unsigned char *)dst;// so we wont change the start of the dst
+	//s = (unsigned char *)src;
+	if (!d && !src)// (!d || !s) won't pass the test, still dont understand WHY..
 		return (NULL);
 	while (n--)
-		*d++ = *s++;
+		*d++ = *src++;
 	return (dst);//return original dst
 }
 

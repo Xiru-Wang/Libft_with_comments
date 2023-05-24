@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:47:28 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/22 22:31:48 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:38:45 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include <string.h>
 #include "libft.h"
 
 /*
@@ -36,7 +36,7 @@ void	*ft_bzero(void *s, size_t n)
 	return (ret);
 }
 
-int main(void)
+/*int main(void)
 {
 	char str1[100] = "Hello, world!";
 	char str2[100] = "Hello, world!";
@@ -53,4 +53,4 @@ int main(void)
 		printf("ft_bzero does not work correctly.\n");
 
 	return 0;
-}
+}*/

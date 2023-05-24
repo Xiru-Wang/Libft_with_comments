@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:57:04 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/22 22:02:31 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:13:35 by xiwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = ft_strlen(s);
 	if (c == 0)
-		return ((char *)s + i);
-	while (i >= 0)
+		return ((char *)s + i);//the end ('\0')
+	while (i >= 0)//if c appears at index[0]
 	{
 		if (s[i] == (char)c)
-			return ((char *)s + i);
+			return ((char *)s + i);//pointer arithmetic
 		i--;
 	}
 	return (0);
