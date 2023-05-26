@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:56:43 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/24 18:04:16 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/26 11:16:27 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		k = 0;
 		if (ret[i] == s2[k])//if encounter the same char(the 1st index of s2)
 		{
-			while (ret[i + k] == s2[k] && i + k < len)// not more than (i+k) len characters are searched.
+			while (ret[i + k] == s2[k] && i + k < len)
+// not more than (i+k) len characters are searched.
 			{
 				k++;
-				if (s2[k] == 0)// s2 is null terminated, reach the end to make sure the whole str:s2 is found in s1
-					return (&((char *)s1)[i]);//return the address of the position where s2 started
+				if (s2[k] == 0)
+// s2 is null terminated, reach the end to make sure the whole s2 is found in s1
+					return (&((char *)s1)[i]);
+// return the address of the position where s2 started
 			}
 		}
 		i++;

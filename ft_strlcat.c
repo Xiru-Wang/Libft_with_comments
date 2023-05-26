@@ -6,14 +6,14 @@
 /*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:56:02 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/22 22:03:07 by xiruwang         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:33:14 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	k;
@@ -28,9 +28,9 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 		i++;
 		k++;
 	}
-	if (i < dstsize)
+	if (i < dstsize)// if dstsize == 1, only 1 space for 0
 		dst[i] = 0;
-	while (src[k])
+	while (src[k])//if dstsize is 0, do nothing, return strlen(src)
 	{
 		i++;
 		k++;

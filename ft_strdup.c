@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:54:44 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/24 18:55:34 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/26 09:52:49 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-1. malloc pace
+1. malloc space
 2. strlcpy
 3. return a pointer to the new string
 If the memory allocation fails, strdup returns a null pointer.

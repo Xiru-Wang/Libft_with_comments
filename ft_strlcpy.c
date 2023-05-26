@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:06:19 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/24 17:44:30 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/26 13:25:34 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
+#include <string.h>
 #include "libft.h"
 
 /*
 strlcpy() function copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
-Reyurn the length of src
+Return the length of src
 Note: take the full size of the buffer (not just the length)
+在目标字符串的缓冲区大小受限的情况下，可以确保复制不会导致缓冲区溢出，同时保证目标字符串以空字符结尾。
 */
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)//size: sizeof(dst) NOT strlen(dst)
 {
 	size_t	i;
@@ -36,7 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)//size: sizeof(dst) NO
 }
 
 
-/*int main()
+int main()
 {
     //char dst[11] = "abc";
     //char src[] = "123456789a";
@@ -52,7 +54,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)//size: sizeof(dst) NO
     printf("after strlcpy, dest is:%s, strlen is : %zu\n", dst1, strlen(dst1));
 
     return 0;
-}*/
+}
 
 /*
 该函数将src字符串的内容拷贝到dst缓冲区中，最多拷贝dstsize-1个字符，

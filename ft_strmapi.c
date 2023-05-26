@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xiwang <xiwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xiruwang <xiruwang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 19:09:33 by xiwang            #+#    #+#             */
-/*   Updated: 2023/05/15 20:02:43 by xiwang           ###   ########.fr       */
+/*   Updated: 2023/05/26 11:14:49 by xiruwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		ret[i] = f(i, s[i]);
+		ret[i] = f(i, s[i]);//apply f to each char
 		i++;
 	}
 	ret[i] = 0;
